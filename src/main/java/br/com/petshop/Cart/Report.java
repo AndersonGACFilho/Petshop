@@ -1,4 +1,4 @@
-package br.com.petshop.Cart;
+package br.com.petshop.cart;
 
 public class Report {
 	

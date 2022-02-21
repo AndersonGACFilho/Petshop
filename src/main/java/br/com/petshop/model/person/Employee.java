@@ -1,18 +1,26 @@
 package br.com.petshop.model.person;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import br.com.petshop.model.animal.Role;
-
 @Entity
-public class Employee extends Person{
+public class Employee{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String name;
+	private String CPF;
+	private Date registrationDate;
 	private String password;
 	private BigDecimal salary;
-	@ManyToOne(fetch = FetchType.EAGER) 
+	
+	@ManyToOne
 	private Role role;
 
 	public String getPassword() {
@@ -26,5 +34,32 @@ public class Employee extends Person{
 	}
 	public void setSalary(BigDecimal salary) {
 		this.salary = salary;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCPF() {
+		return CPF;
+	}
+	public void setCPF(String cPF) {
+		CPF = cPF;
+	}
+	public Date getRegistrationDate() {
+		return registrationDate;
+	}
+	public void setRegistrationDate(Date registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+	public Role getRole() {
+		return role;
+	}
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	public Long getId() {
+		return id;
 	}
 }

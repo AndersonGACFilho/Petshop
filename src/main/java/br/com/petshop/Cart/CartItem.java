@@ -1,15 +1,12 @@
-package br.com.petshop.Cart;
+package br.com.petshop.cart;
 
-import javax.persistence.Entity;
-
-@Entity
 public class CartItem{
 	private Item item;
 	private Integer quantity;
 	
-	public CartItem(Item item,Integer quantity){
+	public CartItem(Item item){
 		this.setItem(item);
-		this.setQuantity(quantity);
+		quantity=1;
 	}
 
 	public Integer getQuantity() {
